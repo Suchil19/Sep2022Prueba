@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--PWA-->
+    <link rel="manifest" href="./manifest.json"> 
+  <title>Desayunos</title>
+  <link rel="stylesheet" href="./css/productos.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- partial:index.partial.html -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--Carousel-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
+
+    
+</head>
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+    <div id="preloader"></div>
+
+<header>
+<nav class="navbar  navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand abs hide-lg-screen" href="#"><img src="https://yellowtennisball.com/wp-content/uploads/2019/06/1200px-Earl_of_Sandwich_restaurant_logo.svg_.png" class="img-fluid logo" alt="logo"></a>
+              <div class="cart-hide-lg" style="position: relative;">
+
+    <!--a class="nav-item nav-link " aria-current="page" href="#"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-shopping-cart"></i></a>
+              <span class="cart-counter">1</span-->
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end offcanvas-menu dark-bg" id="navbarOffcanvas" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+        <button type="button" class="btn-close text-reset btn-close-navbar" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="navbar-nav justify-content-start flex-grow-2 pe-3">
+          <a class="nav-item nav-link active light-text f-size-lg" aria-current="page" href="../index.html"><i class="fas fa-house"></i>&nbsp;Inicio</a>
+          <a class="nav-item nav-link light-text f-size-lg" href="#"><i class="fa-duotone fa-bagel"></i>&nbsp;Desayunos</a>
+          <a class="nav-item nav-link light-text f-size-lg" href="#"><i class="fab fa-flower-daffodil"></i>&nbsp;Flores</a>
+
+
+          <!--a class="nav-item nav-link light-text f-size-lg" href="#">Contacto</a-->
+
+        </div>
+        <a class="navbar-brand abs small-screen" href="#"><img src="https://yellowtennisball.com/wp-content/uploads/2019/06/1200px-Earl_of_Sandwich_restaurant_logo.svg_.png" class="img-fluid logo" alt="logo"></a>
+
+        <div class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          <!--a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#">Acerca de</a-->
+          
+          <li style="display: none;" class="logged-out menu-item">
+            <a class="nav-item nav-link light-text f-size-lg  registration" href="#" data-toggle="modal" data-target="#signinModal"><i class="fas fa-user"></i>&nbsp;Ingresa</a>
+        </li>
+        <!--li style="display: none;" class="logged-out"><a href="#" data-toggle="modal" data-target="#signupModal"><i class="fas fa-clipboard"></i>&nbsp;Registrate</a></li-->
+            <li style="display: none;" class="menu-item logged-in"><a class="nav-item nav-link light-text f-size-lg registration" href="./promociones/avisos.html"><i class="fas fa-bell"></i>&nbsp;Promos</a></li>&nbsp;
+            <li style="display: none;" class="boton-salir logged-in"><a class="nav-item nav-link light-text f-size-lg" href="#" id="logout" onclick="noticias()"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</a></li>
+      
+           <!--div style="position: relative;">
+          <a class="nav-item nav-link hide-link-small light-text" aria-current="page" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-shopping-cart"></i>
+                      <span class="cart-counter">1</span>
+
+          </a>
+          </div-->
+          <ul class="d-inl nav-div-social">
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-tiktok"></i></a>
+            </li>
+          </ul>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+<!--div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel" class="offcanvasRightLabel added-items-header mb-0">ADDED ITEMS (1)</h5>
+    <button type="button" class="offcanvasRightLabelClose btn-close btn-close-black text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="row">
+      <div class="col-4">
+        <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="feature thumb 1" class="img-fluid product-img">
+          </div>
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="product-title-container">
+            <h5 class="product-title">ALEXPACK</h5>
+          </div>
+          </div>
+          <div class="col-12">
+            <div class="product-price-container">
+            <div class="price">
+              <span>
+                €&nbsp;26.00 </span>
+            </div>
+          </div>
+          </div>
+          <div class="col-12">
+            <div class="title-container">
+            <h5 class="title">Quantity: <span>1</span></h5>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtotal mt-20">
+    <div class="row">
+      <div class="col-9">
+        <h5>Total (Excl. delivery)</h5>
+      </div>
+      <div class="col-3">
+        <div class="subtotal-amount">
+          <span>
+                €&nbsp;26.00 </span>
+        </div>
+      </div>
+      <div class="col-12 checkout-btn-container">
+          <div class="mt-20">
+                          <a href="" class="outline-btn">View Cart &nbsp;&#10230;</a>
+</div>
+        </div>
+      <div class="col-12 checkout-btn-container">
+          <div class="mt-10">
+                          <a href="" class="accent-btn">Checkout &nbsp;&#10230;</a>
+</div>
+        </div>
+    </div>
+       </div>
+  </div>
+</div-->
+
+
+
+
+<main id="main" class="wrapper">
+    <div class="container__productos">
+        <div class="product-gallery-main">
+         
+
+
+
+            <div class = "card-wrapper">
+                <div class = "card">
+                  <!-- card left -->
+                  <div class = "product-imgs">
+                    <div class = "img-display">
+                      <div class = "img-showcase">
+                        <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "shoe image">
+                        <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg" alt = "shoe image">
+                        <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg" alt = "shoe image">
+                        <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg" alt = "shoe image">
+                      </div>
+                    </div>
+                    <div class = "img-select">
+                      <div class = "img-item">
+                        <a href = "#" data-id = "1">
+                          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "shoe image">
+                        </a>
+                      </div>
+                      <div class = "img-item">
+                        <a href = "#" data-id = "2">
+                          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg" alt = "shoe image">
+                        </a>
+                      </div>
+                      <div class = "img-item">
+                        <a href = "#" data-id = "3">
+                          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg" alt = "shoe image">
+                        </a>
+                      </div>
+                      <div class = "img-item">
+                        <a href = "#" data-id = "4">
+                          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg" alt = "shoe image">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- card right -->
+                  <div class = "product-content">
+                    <h2 class = "product-title">nike shoes</h2>
+                    <a href = "#" class = "product-link">visit nike store</a>
+                    <div class = "product-rating">
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star"></i>
+                      <i class = "fas fa-star-half-alt"></i>
+                      <span>4.7(21)</span>
+                    </div>
+              
+                    <div class = "product-price">
+                      <p class = "last-price">Old Price: <span>$257.00</span></p>
+                      <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
+                    </div>
+              
+                    <div class = "product-detail">
+                      <h2>about this item: </h2>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
+                      <ul>
+                        <li>Color: <span>Black</span></li>
+                        <li>Available: <span>in stock</span></li>
+                        <li>Category: <span>Shoes</span></li>
+                        <li>Shipping Area: <span>All over the world</span></li>
+                        <li>Shipping Fee: <span>Free</span></li>
+                      </ul>
+                    </div>
+              
+                    <div class = "purchase-info">
+                      <input type = "number" min = "0" value = "1">
+                      <button type = "button" class = "btn">
+                        Add to Cart <i class = "fas fa-shopping-cart"></i>
+                      </button>
+                      <button type = "button" class = "btn">Compare</button>
+                    </div>
+              
+                    <div class = "social-links">
+                      <p>Share At: </p>
+                      <a href = "#">
+                        <i class = "fab fa-facebook-f"></i>
+                      </a>
+                      <a href = "#">
+                        <i class = "fab fa-twitter"></i>
+                      </a>
+                      <a href = "#">
+                        <i class = "fab fa-instagram"></i>
+                      </a>
+                      <a href = "#">
+                        <i class = "fab fa-whatsapp"></i>
+                      </a>
+                      <a href = "#">
+                        <i class = "fab fa-pinterest"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            
+            <div class="information-box" data-editor="dell">
+                <div class="information-inner">
+                    <div class="col">
+                        <div class="box-edit" data-editor="editMCE,dell"><h3>Features</h3>
+                            <div class="PropertyList">
+                            <table class="table-variant01">
+                            <tbody>
+                            <tr>
+                            <td>Brand</td>
+                            <td>{{brand}}</td>
+                            </tr>
+                            <tr>
+                            <td>SKU</td>
+                            <td>{{sku}}</td>
+                            </tr>
+                            <tr>
+                            <td>Color</td>
+                            <td>{{frame_color}}</td>
+                            </tr>
+                            <tr>
+                            <td>Eye Size</td>
+                            <td>{{eye_size}}</td>
+                            </tr>
+                            <tr>
+                            <td>Bridge Size</td>
+                            <td>{{bridge_size}}</td>
+                            </tr>
+                            <tr>
+                            <td>Temples</td>
+                            <td>{{temple_size}}</td>
+                            </tr>
+                            <tr>
+                            <td>Free Shipping</td>
+                            <td>All USA Orders</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div></div>
+                        <div class="box-edit" data-editor="editMCE,dell">
+                            <h3>Detail table</h3>
+                            <div class="TechnicalData">
+                                <table class="table-variant02">
+                                    <tbody><tr>
+                                        <td>Editor / Designer</td>
+                                        <td>Yes, free of charge</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Free theme color choice</td>
+                                        <td>Yes, by 1 click in editor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Free icon selection</td>
+                                        <td>Yes, from <a target="_blank" >Font-Awsome-Icons</a> in editor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HTML-Knowledge</td>
+                                        <td>not required</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2017 conform </td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Technology </td>
+                                        <td>HTML5 / CSS3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Active contents &amp; JS </td>
+                                        <td>No</td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="box-edit" data-editor="editMCE"><h3>Description</h3>
+                            <div class="ItemDescription">
+                            <ul class="info-list">
+                                <li>Modern designs &amp; advanced technology</li>
+                                <li>Compatible with all common browsers und mobile devices</li>
+                                <li>Lister software compatible for: JTL eazyAuction, plentymarkets, Afterbuy, Magnalister, Dreamrobot, brickfox, Dynamics NAV, etope</li>
+                                <li>Free editor / template designer, suitable for users without Listersoftware</li>
+                                <li>Animated images-galleries with 2017-optimized zoom function
+                                    <ul>
+                                        <li>you can Manually add image-urls in editor</li>
+                                        <li>Template can also takes automatically images from Lister software</li>
+                                        <li>4 design gallery-templates are included</li>
+                                        <li>Creation of Product-Variants-Images-Gallery witch switching function (only for editor users)</li>
+                                        <li>up to 16 images</li>
+                                    </ul>
+                                </li>
+                                <li>Animated Bestseller-Galleries: (Cross Selling Galleries)
+                                    <ul>
+                                        <li>Manual adding in editor</li>
+                                        <li>Creation by Listersoftware such as: JTL or brickfox</li>
+                                        <li>3 design templates are included</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-edit" data-editor="dell">
+                <div class="information-box information-variant01">
+                    <div class="information-inner">
+                        <div class="col">
+                            <ul class="advantages-list">
+                                <li>
+                                    <span class="hold-icon"><i class="fa fa-rocket" aria-hidden="true"></i></span>
+                                    <strong class="title" data-editor="edit">Fast Start</strong>
+                                    <span data-editor="edit">ready for lister software or customizable in editor</span>
+                                </li>
+                                <li>
+                                    <span class="hold-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                                    <strong class="title" data-editor="edit">eBay Shop Template</strong>
+                                    <span data-editor="edit">we offer also shop templates</span>
+                                </li>
+                                <li>
+                                    <span class="hold-icon"><i class="fa fa-diamond" aria-hidden="true"></i></span>
+                                    <strong class="title" data-editor="edit">Improved shopping experience</strong>
+                                    <span data-editor="edit">Targeted Marketing through Impressive Designs</span>
+                                </li>
+                                <li>
+                                    <span class="hold-icon"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></span>
+                                    <strong class="title" data-editor="edit">Individually customizable &amp; amp; conversion capability</strong>
+                                    <span data-editor="edit">use your own creativity and create your own template</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <figure class="hold-img" data-editor="img"><img src="https://images.sellbrite.com/production/31365/DR-EQUINOX-X-LL-007/c71eeb34-9f00-52df-bebc-9da7c85df781.jpg" alt="image"></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-box" data-editor="dell">
+                <div class="col">
+                    <div class="box-edit" data-editor="editMCE"><h3>Power seller functions</h3>
+                        <ul class="info-list">
+                        <li>Creation of Product-Variants-Gallery with switching function</li>
+                        <li>Updating the eBay-Shop by editor (Available for eBay-Shop-templates)</li>
+                        <li>Multilingualism with switching function (optional)</li>
+                        <li>Development of individual custom designs on request</li>
+                        <li>Please note: The Editor is not a Lister software</li>
+                        <li>In Editor you can edit and customize your own template and generate it as code and insert it by eBay under description</li>
+                        </ul>
+                        <ul class="shipping-list">
+                        <li>
+                        <dl>
+                        <dt>Shipping:</dt>
+                        <dd>Sample icons</dd>
+                        </dl>
+                        </li>
+                        <li>
+                        <dl>
+                        <dt>Payment:</dt>
+                        <dd>Sample icons</dd>
+                        </dl>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="box-edit">
+                        <ul class="icon-list" data-editor="imagesBox,dell">
+                            <li><img src="https://template.threendy.com/template1/template/images/delivery01.png" alt="image"></li>
+                            <li><img src="https://template.threendy.com/template1/template/images/delivery02.png" alt="image"></li>
+                            <li><img src="https://template.threendy.com/template1/template/images/delivery03.png" alt="image"></li>
+                            <li><img src="https://template.threendy.com/template1/template/images/delivery04.png" alt="image"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box-edit" data-editor="editMCE"><h3>Purchase / Transaction</h3>
+                        <p>After purchase, you will receive the datas as package and the link of our online editor by the e-mail within 12 hours.</p>
+                        <p>In the editor you have the possibility to replace graphics such as logo, to adjust colors, to edit or delete blocks or to link the CSS file to your own host.</p>
+                        <p>The Lister templates could also be prepared and customized in the editor and then be generated as lister template for each Lister.
+                            <br> If you have any individual requests, please contact us before ordering.</p>
+                    </div>
+                    <div class="box-edit">
+                        <ul class="icon-list" data-editor="imagesBox,dell">
+                            <li><img src="https://template.threendy.com/template1/template/images/pay01.png" alt="image"></li>
+                            <li><img src="https://template.threendy.com/template1/template/images/pay02.png" alt="image"></li>
+                            <li><img src="https://template.threendy.com/template1/template/images/pay03.png" alt="image"></li>
+                            <li><img src="https://template.threendy.com/template1/template/images/pay04.png" alt="image"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="best-sellers" data-editor="dell">
+                <h2 data-editor="edit" contenteditable="false"><span>bestseller</span> gallery typ1<br></h2>
+                <div class="hold-best-sellers holdbestsellers" data-editor="bestSellers,colorSettingsContent">
+                    <style class="data-color" data-color="#000000,#ffffff,#de163b,#f5f5f5">
+                    /*colors and backgrounds*/
+                    .related-box-jet{
+                        background: #ffffff;
+                        color: #000000;
+                    }
+                    .related-box-jet a,
+                    .related-box-jet a:link,
+                    .related-box-jet a:visited {color: #000000;}
+                    .best-variant01 li {background: #ffffff;}
+                    .best-variant01 li:nth-child(1) a,
+                    .best-variant01 li:nth-child(6) a{color: #ffffff !important;}
+                    .best-variant01 li:nth-child(1),
+                    .best-variant01 li:nth-child(6) {
+                        background: #de163b;
+                        color: #ffffff;
+                    }
+                    .best-variant01 li:nth-child(1):before,
+                    .best-variant01 li:nth-child(6):before {background: #de163b;}
+                    .best-variant01 li:nth-child(4),
+                    .best-variant01 li:nth-child(5) {background: #f5f5f5;}
+                    /*colors and backgrounds end*/
+                    </style>
+                    <ul class="best-variant01">
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="hold-img">
+                                    <img src="https://images.sellbrite.com/production/31365/DR-EQUINOX-X-LL-007/c71eeb34-9f00-52df-bebc-9da7c85df781.jpg" alt="image">
+                                </span>
+                                <span class="info-wrap">
+                                    <strong class="title">Smartwatch <br>Bilder Silver Seria 2</strong>
+                                    <strong class="related-price">EUR 250,20</strong>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="hold-img">
+                                    <img src="https://images.sellbrite.com/production/31365/DR-EQUINOX-X-LL-007/c71eeb34-9f00-52df-bebc-9da7c85df781.jpg" alt="image">
+                                </span>
+                                <span class="info-wrap">
+                                    <strong class="title">Smartwatch Unique L3</strong>
+                                    <strong class="related-price">EUR 310,00</strong>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="hold-img">
+                                    <img src="https://template.threendy.com/template1/template/images/bestseller-1-product3.jpg" alt="image">
+                                </span>
+                                <span class="info-wrap">
+                                    <strong class="title">Smartwatch Lemon</strong>
+                                    <strong class="related-price">EUR 260.70</strong>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="hold-img">
+                                    <img src="https://template.threendy.com/template1/template/images/bestseller-1-product4.jpg" alt="image">
+                                </span>
+                                <span class="info-wrap">
+                                    <strong class="title">Smartwatch Sport Elegance</strong>
+                                    <strong class="related-price">EUR 425,30</strong>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="hold-img">
+                                    <img src="https://template.threendy.com/template1/template/images/bestseller-1-product5.jpg" alt="image">
+                                </span>
+                                <span class="info-wrap">
+                                    <strong class="title">Smartwatch Simple Sport</strong>
+                                    <strong class="related-price">EUR 320,60</strong>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="hold-img">
+                                    <img src="https://template.threendy.com/template1/template/images/bestseller-1-product6.jpg" alt="image">
+                                </span>
+                                <span class="info-wrap">
+                                    <strong class="title">Smartwatch Crow Classic</strong>
+                                    <strong class="related-price">EUR 190,00</strong>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="categories-box" data-editor="dell">
+                <h2 data-editor="edit">Top Categories <span>Type 1</span></h2>
+                <div class="holder-category" data-editor="category">
+                    <div id="in-box" class="categories-variant01">
+                        <div class="categories-wrap">
+                            <div class="categories-item">
+                                <div class="category-image">
+                                    <a target="_blank" href="#"><img src="https://template.threendy.com/template1/template/images/img04.jpg" alt="image"></a>
+                                </div>
+                                <strong class="title">Women’s watches</strong>
+                                <ul>
+                                    <li><a target="_blank" href="#">Leather</a></li>
+                                    <li><a target="_blank" href="#">Stainless Steal</a></li>
+                                    <li><a target="_blank" href="#">Gold</a></li>
+                                    <li><a target="_blank" href="#">Silver</a></li>
+                                    <li><a target="_blank" href="#">Premium</a></li>
+                                    <li><a target="_blank" href="#">Everyday</a></li>
+                                    <li><a target="_blank" href="#">Sony</a></li>
+                                    <li><a target="_blank" href="#">Apple</a></li>
+                                    <li><a target="_blank" href="#">Breitling</a></li>
+                                    <li><a target="_blank" href="#">Westpoint</a></li>
+                                    <li><a target="_blank" href="#">Water Resistant</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories-item">
+                                <div class="category-image">
+                                    <a target="_blank" href="#"><img src="https://template.threendy.com/template1/template/images/img05.jpg" alt="image"></a>
+                                </div>
+                                <strong class="title">Men’s watches</strong>
+                                <ul>
+                                    <li><a target="_blank" href="#">Leather</a></li>
+                                    <li><a target="_blank" href="#">Stainless Steal</a></li>
+                                    <li><a target="_blank" href="#">Gold</a></li>
+                                    <li><a target="_blank" href="#">Silver</a></li>
+                                    <li><a target="_blank" href="#">Premium</a></li>
+                                    <li><a target="_blank" href="#">Everyday</a></li>
+                                    <li><a target="_blank" href="#">Sony</a></li>
+                                    <li><a target="_blank" href="#">Apple</a></li>
+                                    <li><a target="_blank" href="#">Breitling</a></li>
+                                    <li><a target="_blank" href="#">Westpoint</a></li>
+                                    <li><a target="_blank" href="#">Water Resistant</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories-item">
+                                <div class="category-image">
+                                    <a target="_blank" href="#"><img src="https://template.threendy.com/template1/template/images/img06.jpg" alt="image"></a>
+                                </div>
+                                <strong class="title">Accessories</strong>
+                                <ul>
+                                    <li><a target="_blank" href="#">Leather</a></li>
+                                    <li><a target="_blank" href="#">Stainless Steal</a></li>
+                                    <li><a target="_blank" href="#">Gold</a></li>
+                                    <li><a target="_blank" href="#">Silver</a></li>
+                                    <li><a target="_blank" href="#">Premium</a></li>
+                                    <li><a target="_blank" href="#">Sony</a></li>
+                                    <li><a target="_blank" href="#">Apple</a></li>
+                                    <li><a target="_blank" href="#">Water Resistant</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!--FIREBASE-->
+
+<!-- REGISTRO FIREBASE -->
+  <!--MAIN CONTENT-->
+  <div class="container p-5" style="z-index:1">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group posts">
+                
+        </ul>
+      </div>
+    </div>
+  </div>
+              
+  <!--BOOTSTRAP SCRIPTS-->
+  
+      <!-- Modal  SignUP-->
+      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel">Registro:
+              Contraseña con al menos 6 caracteres
+            </h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+           </div>
+           <div class="modal-body">
+            <form id="signup-form">
+              <div class="form-group">
+                 <input type="text" id="signup-email" class="form-control"
+                 placeholder="E-mail" required>
+              </div>
+              <div class="form-group">
+                 <input type="password" id="signup-password" class="form-control"
+                 placeholder="Contraseña" required>
+              </div>
+              <button type="submit" class="btn btn-primary">SignUp</button>
+            </form>
+           </div>
+         </div>
+        </div>
+      </div>
+                 
+                 
+                 
+                  <!-- Modal  SignIn-->
+                  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Ingresa con tu correo de Gmail a nuestra plataforma y mantente informado sobre
+                          promociones y avisos importantes
+                        </h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       </div>
+                       <div class="modal-body">
+                          
+                        <form id="login-form">
+                           
+                          <!--div class="form-group">
+                             <input type="text" id="login-email" class="form-control"
+                             placeholder="E-mail" required>
+                          </div>
+                          <div class="form-group">
+                             <input type="password" id="login-password" class="form-control"
+                             placeholder="Contraseña" required>
+                          </div>
+                          
+                          <button type="submit" class="btn btn-info btn-block">Ingresa</button-->
+                          
+                          <button type="button" class="btn btn-success btn-block black-background white" id="googleLogin"><i class="fab fa-google" aria-hidden="true"></i>&nbsp;Ingresa o Regístrate con Gmail</button>
+                          <!--button type="submit" class="btn btn-primary btn-block" id="facebookLogin"><i class="fab fa-facebook"></i>&nbsp;Ingresa o Regístrate con Facebook</button-->
+                        </form>
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+<!--TERMINA FIREBASE-->
+
+  <footer id="footer" class="footer-bg-dark py-30">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="footer-title-wrapper">
+            <h3>Contacto</h3>
+            <p>Lorely@support.com</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="footer-title-wrapper right">
+            <h3>CONNECT</h3>
+            <ul>
+              <li><a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a></li>
+              <li> <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a></li>
+              <li> <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+      <div class="row">
+        <div class="col-lg-4">
+          <p>© 2022 Jazmin & Luis. All Rights Reserved. <!--br> Hecho con amor <i class="fas fa-heart"></i> by Luis</p-->
+        </div>
+        <div class="col-lg-8">
+          <ul>
+                                  <li><a href="">Acerca de</a></li>
+                                 
+                                  <li><a href="">Politica de privacidad</a></li>
+                                  <li><a href="">Desayunos</a></li>
+                              </ul>
+        </div>
+      </div>
+      </div>
+      
+      
+    </div>
+    </footer>
+
+
+  <!--Carousel-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+
+          <!--FIREBASE SCRIPTS-->
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+                <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+            
+              <!-- TODO: Add SDKs for Firebase products that you want to use
+                  https://firebase.google.com/docs/web/setup#available-libraries -->
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+              
+                <script>
+                   // Your web app's Firebase configuration
+                   var firebaseConfig = {
+                apiKey: "AIzaSyD9lnm2-ZB8-L1VYovDD-rIF5jXu8EdTzw",
+                authDomain: "human-care-clinic.firebaseapp.com",
+                projectId: "human-care-clinic",
+                storageBucket: "human-care-clinic.appspot.com",
+                messagingSenderId: "615242911884",
+                appId: "1:615242911884:web:3df2a51c271eeea80baba9",
+                measurementId: "G-BEJYVEMDQX"
+              };
+            
+                  // Initialize Firebase
+                  firebase.initializeApp(firebaseConfig);
+                  const auth = firebase.auth();
+                  // FireStore base de datos
+                  const fs = firebase.firestore();
+                  firebase.analytics();
+                </script>
+                <!--TERMINA FIREBASE-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+
+
+
+     <!-- PWA -->
+     <script src="./script.js"></script>
+
+
+<!-- partial -->
+</script><script  src="./js/main.js"></script>
+     <!--Registro-->
+     <script src="./registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descuentos y más</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- partial:index.partial.html -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--Carousel-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
+</head>
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+    <div id="preloader"></div>
+
+<header>
+<nav class="navbar  navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand abs hide-lg-screen" href="#"><img src="https://yellowtennisball.com/wp-content/uploads/2019/06/1200px-Earl_of_Sandwich_restaurant_logo.svg_.png" class="img-fluid logo" alt="logo"></a>
+              <div class="cart-hide-lg" style="position: relative;">
+
+    <!--a class="nav-item nav-link " aria-current="page" href="#"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-shopping-cart"></i></a>
+              <span class="cart-counter">1</span-->
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end offcanvas-menu dark-bg" id="navbarOffcanvas" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+        <button type="button" class="btn-close text-reset btn-close-navbar" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="navbar-nav justify-content-start flex-grow-2 pe-3">
+          <a class="nav-item nav-link active light-text f-size-lg" aria-current="page" href="../index.html"><i class="fas fa-house"></i>&nbsp;Inicio</a>
+          <a class="nav-item nav-link light-text f-size-lg" href="#"><i class="fa-duotone fa-bagel"></i>&nbsp;Desayunos</a>
+          <a class="nav-item nav-link light-text f-size-lg" href="#"><i class="fab fa-flower-daffodil"></i>&nbsp;Flores</a>
+
+
+          <!--a class="nav-item nav-link light-text f-size-lg" href="#">Contacto</a-->
+
+        </div>
+        <a class="navbar-brand abs small-screen" href="#"><img src="https://yellowtennisball.com/wp-content/uploads/2019/06/1200px-Earl_of_Sandwich_restaurant_logo.svg_.png" class="img-fluid logo" alt="logo"></a>
+
+        <div class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          <!--a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#">Acerca de</a-->
+          
+          <li style="display: none;" class="logged-out menu-item">
+            <a class="nav-item nav-link light-text f-size-lg  registration" href="#" data-toggle="modal" data-target="#signinModal"><i class="fas fa-user"></i>&nbsp;Ingresa</a>
+        </li>
+        <!--li style="display: none;" class="logged-out"><a href="#" data-toggle="modal" data-target="#signupModal"><i class="fas fa-clipboard"></i>&nbsp;Registrate</a></li-->
+            <li style="display: none;" class="menu-item logged-in"><a class="nav-item nav-link light-text f-size-lg registration" href="./promociones/avisos.html"><i class="fas fa-bell"></i>&nbsp;Promos</a></li>&nbsp;
+            <li style="display: none;" class="boton-salir logged-in"><a class="nav-item nav-link light-text f-size-lg" href="#" id="logout" onclick="noticias()"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</a></li>
+      
+           <!--div style="position: relative;">
+          <a class="nav-item nav-link hide-link-small light-text" aria-current="page" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-shopping-cart"></i>
+                      <span class="cart-counter">1</span>
+
+          </a>
+          </div-->
+          <ul class="d-inl nav-div-social">
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-tiktok"></i></a>
+            </li>
+          </ul>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+<!--div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel" class="offcanvasRightLabel added-items-header mb-0">ADDED ITEMS (1)</h5>
+    <button type="button" class="offcanvasRightLabelClose btn-close btn-close-black text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="row">
+      <div class="col-4">
+        <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="feature thumb 1" class="img-fluid product-img">
+          </div>
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="product-title-container">
+            <h5 class="product-title">ALEXPACK</h5>
+          </div>
+          </div>
+          <div class="col-12">
+            <div class="product-price-container">
+            <div class="price">
+              <span>
+                €&nbsp;26.00 </span>
+            </div>
+          </div>
+          </div>
+          <div class="col-12">
+            <div class="title-container">
+            <h5 class="title">Quantity: <span>1</span></h5>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtotal mt-20">
+    <div class="row">
+      <div class="col-9">
+        <h5>Total (Excl. delivery)</h5>
+      </div>
+      <div class="col-3">
+        <div class="subtotal-amount">
+          <span>
+                €&nbsp;26.00 </span>
+        </div>
+      </div>
+      <div class="col-12 checkout-btn-container">
+          <div class="mt-20">
+                          <a href="" class="outline-btn">View Cart &nbsp;&#10230;</a>
+</div>
+        </div>
+      <div class="col-12 checkout-btn-container">
+          <div class="mt-10">
+                          <a href="" class="accent-btn">Checkout &nbsp;&#10230;</a>
+</div>
+        </div>
+    </div>
+       </div>
+  </div>
+</div-->
+
+
+
+<!-- start of hero -->
+<section class="hero-slider hero-style">
+	<div class="swiper-container">
+	  <div class="swiper-wrapper">
+		<div class="swiper-slide">
+		  <div class="slide-inner slide-bg-image" data-background="https://images.unsplash.com/photo-1479894127662-a987d1e38f82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+			<div class="container1">
+			  <div data-swiper-parallax="300" class="slide-title">
+				<h2>Desayunos 01</h2>
+			  </div>
+			  <div data-swiper-parallax="400" class="slide-text">
+				<p>Desayunos sorpesa <!-- entendemos
+					el mundo moderno y como tener presencia en internet.-->
+				</p>
+			  </div>
+			  <div class="clearfix"></div>
+			  <div data-swiper-parallax="500" class="slide-btns">
+				<a href="./recursos/servicios.html" class="theme-btn-s2">Ver más</a>
+				<!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i> Get Info</a-->
+			  </div>
+			</div>
+		  </div>
+		  <!-- end slide-inner -->
+		</div>
+		<!-- end swiper-slide -->
+  
+		<div class="swiper-slide">
+		  <div class="slide-inner slide-bg-image" data-background="https://images.unsplash.com/photo-1558497446-1fd7429d9be4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+			<div class="container1">
+			  <div data-swiper-parallax="300" class="slide-title">
+				<h2>Desayunos 02</h2>
+			  </div>
+			  <div data-swiper-parallax="400" class="slide-text">
+				<p>Desayunos sorpesa</p>
+			  </div>
+			  <div class="clearfix"></div>
+			  <div data-swiper-parallax="500" class="slide-btns">
+				<a href="./recursos/servicios.html" class="theme-btn-s2">Ver más</a>
+				<!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+			  </div>
+			</div>
+		  </div>
+		  <!-- end slide-inner -->
+		</div>
+		<!-- end swiper-slide -->
+
+
+		<div class="swiper-slide">
+			<div class="slide-inner slide-bg-image" data-background="https://images.unsplash.com/photo-1611601184963-9d1de9b79ff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+			  <div class="container1">
+				<div data-swiper-parallax="300" class="slide-title">
+				  <h2>Desayunos 03</h2>
+				</div>
+				<div data-swiper-parallax="400" class="slide-text">
+				  <p>Desayunos sorpesa</p>
+				</div>
+				<div class="clearfix"></div>
+				<div data-swiper-parallax="500" class="slide-btns">
+				  <a href="#" class="theme-btn-s2">Ver más</a>
+				  <!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+				</div>
+			  </div>
+			</div>
+			<!-- end slide-inner -->
+		  </div>
+		  <!-- end swiper-slide -->
+
+
+		  <div class="swiper-slide">
+			<div class="slide-inner slide-bg-image" data-background="https://images.unsplash.com/photo-1484344597163-9347ad5cb26d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1666&q=80">
+			  <div class="container1">
+				<div data-swiper-parallax="300" class="slide-title">
+				  <h2>Desayunos 04</h2>
+				</div>
+				<div data-swiper-parallax="400" class="slide-text">
+				  <p>Desayunos sorpesa</p>
+				</div>
+				<div class="clearfix"></div>
+				<div data-swiper-parallax="500" class="slide-btns">
+				  <a href="#" class="theme-btn-s2">Ver más</a>
+				  <!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+				</div>
+			  </div>
+			</div>
+			<!-- end slide-inner -->
+		  </div>
+		  <!-- end swiper-slide -->
+
+
+		  <div class="swiper-slide">
+			<div class="slide-inner slide-bg-image" data-background="https://images.unsplash.com/photo-1497888329096-51c27beff665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80">
+			  <div class="container1">
+				<div data-swiper-parallax="300" class="slide-title">
+				  <h2>Desayunos 05</h2>
+				</div>
+				<div data-swiper-parallax="400" class="slide-text">
+				  <p>Desayunos sorpesa</p>
+				</div>
+				<div class="clearfix"></div>
+				<div data-swiper-parallax="500" class="slide-btns">
+				  <a href="#" class="theme-btn-s2">Ver más</a>
+				  <!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+				</div>
+			  </div>
+			</div>
+			<!-- end slide-inner -->
+		  </div>
+		  <!-- end swiper-slide -->
+
+
+		  <div class="swiper-slide">
+			<div class="slide-inner slide-bg-image" data-background="https://images.unsplash.com/photo-1497888329096-51c27beff665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80">
+			  <div class="container1">
+				<div data-swiper-parallax="300" class="slide-title">
+				  <h2>Redes Sociales</h2>
+				</div>
+				<div data-swiper-parallax="400" class="slide-text">
+				  <p>¿Quieres crecer en las redes sociales? Estas en el lugar indicado.</p>
+				</div>
+				<div class="clearfix"></div>
+				<div data-swiper-parallax="500" class="slide-btns">
+				  <a href="#" class="theme-btn-s2">Ver más</a>
+				  <!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+				</div>
+			  </div>
+			</div>
+			<!-- end slide-inner -->
+		  </div>
+		  <!-- end swiper-slide -->
+
+
+	  </div>
+	  <!-- end swiper-wrapper -->
+  
+	  <!-- swipper controls -->
+	  <div class="swiper-pagination"></div>
+	  <div class="swiper-button-next"></div>
+	  <div class="swiper-button-prev"></div>
+	</div>
+  </section>
+  <!-- end of hero slider -->
+
+  <br>
+  <div class="container">
+
+  <div class="row">
+    <div class="col-lg-6 ">
+      <div class="body">
+
+  <div>
+    <h2 class="mb-60 mt-30">Acerca de Nosotros</h2>
+    <h3>How alexpack made my dreams come true</h3>
+    <p>There’s nothing better than lifting weights outdoors and in the sun.
+      Our #alexpack was designed just for that.
+      We started out as an idea: I was on vacation with no weights, and stuffed a suitcase with everything I could to get a squat session in. </p>
+    <p>It then turned into a Kickstarter campaign.
+      And then turned into a movement.</p>
+  </div>
+
+</div>
+</div>
+<div class="col-lg-6">
+<div class="img-design">
+  <div class="imgac "> <img src="https://images.unsplash.com/photo-1610635967007-34ebbd66f64d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1670&q=80" alt="about img" class="ag-dg1 img-fluid h-scl-base"></div>
+</div>
+</div>
+<div class="col-lg-6 mt30">
+    <div class="itm-media-object mt40 tilt-3d">
+      <div class="media">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000"><img src="https://separateweb.com/niwax-demo/images/icons/computers.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Desayunos</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet ligula nec leo elementum semper. Mauris aliquet egestas metus.</p>
+        </div>
+      </div>
+      <div class="media mt40">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000"><img src="https://separateweb.com/niwax-demo/images/icons/worker.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Desayunos</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet ligula nec leo elementum semper. Mauris aliquet egestas metus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-lg-6 mt30">
+    <div class="itm-media-object mt40 tilt-3d">
+      <div class="media">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000"><img src="https://separateweb.com/niwax-demo/images/icons/worker.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Desayunos</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet ligula nec leo elementum semper. Mauris aliquet egestas metus.</p>
+        </div>
+      </div>
+      <div class="media mt40">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000" style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);"><img src="https://separateweb.com/niwax-demo/images/icons/computers.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Desayunos</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet ligula nec leo elementum semper. Mauris aliquet egestas metus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!--FIREBASE-->
+
+<!-- REGISTRO FIREBASE -->
+  <!--MAIN CONTENT-->
+  <div class="container p-5" style="z-index:1">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group posts">
+                
+        </ul>
+      </div>
+    </div>
+  </div>
+              
+  <!--BOOTSTRAP SCRIPTS-->
+  
+      <!-- Modal  SignUP-->
+      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel">Registro:
+              Contraseña con al menos 6 caracteres
+            </h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+           </div>
+           <div class="modal-body">
+            <form id="signup-form">
+              <div class="form-group">
+                 <input type="text" id="signup-email" class="form-control"
+                 placeholder="E-mail" required>
+              </div>
+              <div class="form-group">
+                 <input type="password" id="signup-password" class="form-control"
+                 placeholder="Contraseña" required>
+              </div>
+              <button type="submit" class="btn btn-primary">SignUp</button>
+            </form>
+           </div>
+         </div>
+        </div>
+      </div>
+                 
+                 
+                 
+                  <!-- Modal  SignIn-->
+                  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Ingresa con tu correo de Gmail a nuestra plataforma y mantente informado sobre
+                          promociones y avisos importantes
+                        </h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       </div>
+                       <div class="modal-body">
+                          
+                        <form id="login-form">
+                           
+                          <!--div class="form-group">
+                             <input type="text" id="login-email" class="form-control"
+                             placeholder="E-mail" required>
+                          </div>
+                          <div class="form-group">
+                             <input type="password" id="login-password" class="form-control"
+                             placeholder="Contraseña" required>
+                          </div>
+                          
+                          <button type="submit" class="btn btn-info btn-block">Ingresa</button-->
+                          
+                          <button type="button" class="btn btn-success btn-block black-background white" id="googleLogin"><i class="fab fa-google" aria-hidden="true"></i>&nbsp;Ingresa o Regístrate con Gmail</button>
+                          <!--button type="submit" class="btn btn-primary btn-block" id="facebookLogin"><i class="fab fa-facebook"></i>&nbsp;Ingresa o Regístrate con Facebook</button-->
+                        </form>
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+<!--TERMINA FIREBASE-->
+
+  <footer id="footer" class="footer-bg-dark py-30">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="footer-title-wrapper">
+            <h3>Contacto</h3>
+            <p>Lorely@support.com</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="footer-title-wrapper right">
+            <h3>CONNECT</h3>
+            <ul>
+              <li><a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a></li>
+              <li> <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a></li>
+              <li> <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+      <div class="row">
+        <div class="col-lg-4">
+          <p>© 2022 Jazmin & Luis. All Rights Reserved. <!--br> Hecho con amor <i class="fas fa-heart"></i> by Luis</p-->
+        </div>
+        <div class="col-lg-8">
+          <ul>
+                                  <li><a href="">Acerca de</a></li>
+                                 
+                                  <li><a href="">Politica de privacidad</a></li>
+                                  <li><a href="">Desayunos</a></li>
+                              </ul>
+        </div>
+      </div>
+      </div>
+      
+      
+    </div>
+    </footer>
+
+
+  <!--Carousel-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+
+          <!--FIREBASE SCRIPTS-->
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+                <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+            
+              <!-- TODO: Add SDKs for Firebase products that you want to use
+                  https://firebase.google.com/docs/web/setup#available-libraries -->
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+              
+                <script>
+                   // Your web app's Firebase configuration
+                   var firebaseConfig = {
+                    apiKey: "AIzaSyDJ3wjiJzTXyrg39rX7lYkRnwY0rVFypYw",
+    authDomain: "sep2022-prueba.firebaseapp.com",
+    projectId: "sep2022-prueba",
+    storageBucket: "sep2022-prueba.appspot.com",
+    messagingSenderId: "1049972345863",
+    appId: "1:1049972345863:web:ae40a92b53d7f96eacaea2",
+    measurementId: "G-78KE7V5Y37"
+              };
+            
+                  // Initialize Firebase
+                  firebase.initializeApp(firebaseConfig);
+                  const auth = firebase.auth();
+                  // FireStore base de datos
+                  const fs = firebase.firestore();
+                  firebase.analytics();
+                </script>
+                <!--TERMINA FIREBASE-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+<!-- partial -->
+</script><script  src="./js/main.js"></script>
+     <!--Registro-->
+     <script src="./registro.js"></script>
+</body>
+</html>
